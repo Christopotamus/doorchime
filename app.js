@@ -24,8 +24,7 @@ button.watch(function(err, value){
   }
   if(value === 1 && playing === false){
       playing = true;
-      console.log(audio_files);
-      player.play('./audio/woo.ogg', function(err){
+      player.play('./audio/'+audio_files[Math.floor(Math.random() * audio_files.length)], function(err){
         playing = false;
       });
   }
