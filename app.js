@@ -13,6 +13,6 @@ button.watch(function(err, value){
   }
 
   console.log("Button changed:", value);
-})
+});
 
 process.on('SIGINT', exit);
