@@ -20,7 +20,7 @@ button.watch(function(err, value){
   }
   if(value === 1 && playing === false){
       playing = true;
-      console.log(files);
+      console.log(audio_files);
       player.play('./audio/woo.ogg', function(err){
         playing = false;
       });
