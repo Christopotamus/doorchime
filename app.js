@@ -1,6 +1,10 @@
+const fs = require('fs');
+
 var Gpio = require('onoff').Gpio,
     button = new Gpio(7, 'in', 'both');
-
+var audio_files = fs.readdir('./audio/', function(err, files){
+    return files;
+});
 var player = require('play-sound')(opts={});
 
 var playing = false;
@@ -16,6 +20,7 @@ button.watch(function(err, value){
   }
   if(value === 1 && playing === false){
       playing = true;
+      console.log(files);
       player.play('./audio/woo.ogg', function(err){
         playing = false;
       });
