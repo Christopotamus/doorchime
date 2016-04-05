@@ -4,6 +4,7 @@
   "description": "Just a door chime that plays sound files",
   "author": "Christopher Budd",
   "dependencies": {
+    "epoll": "^0.1.17",
     "play-sound": "0.0.7",
     "rpi-gpio": "^0.7.0"
   }
