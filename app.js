@@ -1,6 +1,18 @@
-var gpio = require('rpi-gpio');
+var gpio = require('onoff').Gpio;
 
-gpio.on('change', function(channel, value) {
-	console.log('Channel ' + channel + ' value is now ' + value);
-});
-gpio.setup(7, gpio.DIR_IN, gpio.EDGE_BOTH);
+button = new Gpio(7, 'in', 'both');
+
+function exit(){
+  button.unexport();
+  process.exit();
+}
+
+button.watch(function(err, value){
+  if(err){
+    throw err;
+  }
+
+  console.log("Button changed:", value);
+})
+
+process.on('SIGINT', exit);
