@@ -1,0 +1,10 @@
+{
+  "name": "doorchime",
+  "version": "0.0.1",
+  "description": "Just a door chime that plays sound files",
+  "author": "Christopher Budd",
+  "dependencies": {
+    "play-sound": "0.0.7",
+    "rpi-gpio": "^0.7.0"
+  }
+}
