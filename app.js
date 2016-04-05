@@ -1,4 +1,4 @@
-var gpio = require('onoff').Gpio,
+var Gpio = require('onoff').Gpio,
     button = new Gpio(7, 'in', 'both');
 
 function exit(){
