@@ -1,17 +1,15 @@
 const fs = require('fs');
-
 var Gpio = require('onoff').Gpio,
     button = new Gpio(7, 'in', 'both');
 var audio_files = [];
+var player = require('play-sound')(opts={});
+var playing = false;
 
 fs.readdir('./audio/', function(err, files){
     files.forEach(function(file){
         audio_files.push(file);
     });
 });
-var player = require('play-sound')(opts={});
-
-var playing = false;
 
 function exit(){
   button.unexport();
