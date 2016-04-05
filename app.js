@@ -1,6 +1,5 @@
-var gpio = require('onoff').Gpio;
-
-button = new Gpio(7, 'in', 'both');
+var gpio = require('onoff').Gpio,
+    button = new Gpio(7, 'in', 'both');
 
 function exit(){
   button.unexport();
